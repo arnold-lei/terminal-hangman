@@ -23,5 +23,8 @@ var question = [{
 
 urban.random().first(function(entry) {
     term.bold(entry.word + ': ' );
-    term(entry.definition)
+    term(entry.definition);
+    word.push(entry.word);
 });
+
+console.log(word);
