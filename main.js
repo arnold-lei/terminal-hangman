@@ -13,17 +13,11 @@ term.clear();
 
 //If the letter the user guesses is right then 
 var generateBlanks = function(word){
-	blanks = word.split('');
+	blanks = word.toString().split('');
 	for(var i=0; i < blanks.length; i++){
-		for(var x=0; x < guess.length; x++){
-			if(guess[x].indexOf(blanks[i])){
-				blanks[i] = guess[x];
-			}else {
-				blanks[i] = '_';
-			}
-		}
+		blanks[i] = '_'
 	}
-	console.log(blanks)
+	console.log(blanks);
 }
 
 
@@ -47,7 +41,8 @@ function generateWord(){
 	    term.bold(entry.word + ': ');
 	    term(entry.definition+'\r\n\r\n');
 	    word.push(entry.word);
-	    definition.push(entry.definition)
+	    definition.push(entry.definition);
+	    generateBlanks(word);
 	    guess();
 	});	
 	
