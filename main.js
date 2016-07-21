@@ -1,7 +1,9 @@
 var term = require( 'terminal-kit' ).terminal
 var inquirer = require('inquirer');
 var urban = require('urban');
+
 var word = [];
+var definition = [];
 var guess = [];
 term.clear();
 
@@ -15,16 +17,25 @@ var question = [{
     message: 'Welcome to Hangman! Please guess a letter:'
   }];
 
-// inquirer.prompt(question).then(function (answers) {
-//   console.log(JSON.stringify(answers, null, '  '));
-//   guess.push(answers.guess)
-//   console.log(guess)
-// });
 
-urban.random().first(function(entry) {
-    term.bold(entry.word + ': ' );
-    term(entry.definition);
-    word.push(entry.word);
-});
 
+function generateWord(){
+	urban.random().first(function(entry) {
+	    term.bold(entry.word + ': ' );
+	    word.push(entry.word);
+	    definition.push(entry.definition)
+	});
+
+};
+
+
+generateWord();
 console.log(word);
+
+inquirer.prompt(question).then(function (answers) {
+  console.log(JSON.stringify(answers, null, '  '));
+  guess.push(answers.guess)
+  console.log(guess)
+}).then(function(ans){
+	console.log(ans)
+});
