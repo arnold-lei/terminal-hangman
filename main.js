@@ -17,7 +17,7 @@ var generateBlanks = function(word){
 	for(var i=0; i < blanks.length; i++){
 		blanks[i] = '_'
 	}
-	console.log(blanks);
+	term(blanks);
 }
 
 
@@ -27,9 +27,9 @@ var question = [{
     message: 'Welcome to Hangman! Please guess a letter:',
     validate: function(value){
     	if(isNan(vaule) == true){
-    		return true
+    		return true;
     	} else {
-    		return false
+    		return false;
     	}
     }
   }];
@@ -42,14 +42,13 @@ function generateWord(){
 	    term(entry.definition+'\r\n\r\n');
 	    word.push(entry.word);
 	    definition.push(entry.definition);
+	    //create the blanks on screen
 	    generateBlanks(word);
 	    guess();
 	});	
 	
 	
 };
-
-
 
 generateWord();
 
