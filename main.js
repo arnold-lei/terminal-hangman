@@ -2,10 +2,9 @@ var term = require( 'terminal-kit' ).terminal
 var inquirer = require('inquirer');
 var urban = require('urban');
 var letter = require('./letter');
+var wurd = require('./word');
 
-var word=[];
 var blanks;
-var definition=[];
 var guess = [];
 
 term.clear();
@@ -32,15 +31,10 @@ var question = [{
 
 
 function generateWord(){
-	urban.random().first(function(entry) {
+	urban.random().first(function(werd) {
 		term.clear();
-	    term.bold(entry.word + ': ');
-	    term(entry.definition+'\r\n\r\n');
-	    //create world object
-	    word.push(entry.word);
-	    definition.push(entry.definition);
-	    //create the blanks on screen
-	    letter(word);
+		var entry = new wurd(werd.word, werd.definition);
+	    letter(entry.word);
 	    guess();
 	});	
 };

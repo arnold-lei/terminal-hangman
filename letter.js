@@ -6,7 +6,7 @@ function generateBlanks(word){
 	blanks = word.toString().split('');
 	for(var i=0; i < blanks.length; i++){
 		if (blanks[i] == ' '){
-			
+
 		}else {
 			blanks[i] = '_';
 		}
