@@ -6,6 +6,8 @@ var wurd = require('./word');
 
 var blanks;
 var guess = [];
+var guessRemaining = 9;
+var hint; 
 
 term.clear();
 term.blink('loading');
@@ -18,12 +20,14 @@ var question = [{
     type: 'input',
     name: 'guess',
     y: 1,
-    message: 'Welcome to Hangman! Please guess a letter:',
+    message: 'Welcome to Hangman! Please guess a letter: ',
     validate: function(value){
     	if(isNan(vaule) == true){
     		return true;
     	} else {
     		return false;
+    		guess.push(value);
+    		console.log(guess);
     	}
     }
   }];
