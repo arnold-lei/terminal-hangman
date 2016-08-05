@@ -32,8 +32,10 @@ var question = [{
     // }
 }];
 
-var checkLetter = function(){
-	
+var checkLetter = function(arr){
+	for(var i = 0; i < arr.length; i++){
+		
+	}
 }
 
 var guess = function(){
