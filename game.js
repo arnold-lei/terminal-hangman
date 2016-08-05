@@ -2,7 +2,7 @@ var urban = require('urban');
 var term = require('terminal-kit').terminal;
 var wurd = require('./word');
 var letter = require('./letter');
-var inquirer = require('inquirer');	
+var inquirer = require('inquirer');
 var userGuess = [];
 
 function generateWord(){
@@ -13,7 +13,7 @@ function generateWord(){
 	    console.log('Word: ' + werd.word);
 	    console.log('Definition: ' + werd.definition)
 	    guess();
-	});	
+	});
 };
 
 var question = [{
@@ -32,11 +32,17 @@ var question = [{
     // }
 }];
 
+var checkLetter = function(){
+	
+}
+
 var guess = function(){
 	inquirer.prompt(question).then(function (answers) {
 		console.log(userGuess)
 		userGuess.push(answers.guess);
 		guess()
+	}).then(function(){
+
 	});
 }
 
