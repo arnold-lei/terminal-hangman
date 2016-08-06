@@ -34,16 +34,17 @@ var question = [{
 }];
 
 var checkLetter = function(arr, guess){
-	// for(var i = 0; i < arr.length; i++){
-	// 	if()
-	// }
+	for(var i = 0; i < arr.length; i++){
+		if(guess.indexOf(arr.letters)){
+			console.log(guess)
+		}
+	}
 }
 
 var guess = function(){
 	inquirer.prompt(question).then(function (answers) {
 		console.log(userGuess);
 		userGuess.push(answers.guess);
-		console.log(entry.word);
 		guess()
 	})
 }
