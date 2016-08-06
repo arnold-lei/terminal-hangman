@@ -4,11 +4,12 @@ var wurd = require('./word');
 var letter = require('./letter');
 var inquirer = require('inquirer');
 var userGuess = [];
+var entry = {};
 
 function generateWord(){
 	urban.random().first(function(werd) {
 		term.clear();
-		var entry = new wurd(werd.word, werd.definition);
+		entry = new wurd(werd.word, werd.definition);
 	    letter(entry.word);
 	    console.log('Word: ' + werd.word);
 	    console.log('Definition: ' + werd.definition)
@@ -33,15 +34,16 @@ var question = [{
 }];
 
 var checkLetter = function(arr, guess){
-	for(var i = 0; i < arr.length; i++){
-		if(guess.indexOf(arr))
-	}
+	// for(var i = 0; i < arr.length; i++){
+	// 	if()
+	// }
 }
 
 var guess = function(){
 	inquirer.prompt(question).then(function (answers) {
-		console.log(userGuess)
+		console.log(userGuess);
 		userGuess.push(answers.guess);
+		console.log(entry.word);
 		guess()
 	})
 }
