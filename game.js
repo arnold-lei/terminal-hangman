@@ -32,9 +32,9 @@ var question = [{
     // }
 }];
 
-var checkLetter = function(arr){
+var checkLetter = function(arr, guess){
 	for(var i = 0; i < arr.length; i++){
-		
+		if(guess.indexOf(arr))
 	}
 }
 
@@ -43,9 +43,7 @@ var guess = function(){
 		console.log(userGuess)
 		userGuess.push(answers.guess);
 		guess()
-	}).then(function(){
-
-	});
+	})
 }
 
 module.exports = generateWord;
